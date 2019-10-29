@@ -71,14 +71,14 @@ for (var i = 0; i < pixW*pixH; i++) {
     let D = document.createElement("div"); 
     D.addEventListener("mouseenter",()=>{
         console.log("aa")
-        D.style.backgroundColor="#"+((1<<24)*Math.random()|0).toString(16);
+      	  D.style.backgroundColor="#"+((1<<24)*Math.random()|0).toString(16);
     });
     D.addEventListener("onmousemove",()=>{
         console.log("aa")
-        D.style.backgroundColor="";
+      	  D.style.backgroundColor="";
     });
-	D.style.transition = "all 0.1s linear 0s";
-    body.appendChild(D);
-    // D.innerText=i;
-    console.log(i)
+    D.style.transition = "all 0.1s linear 0s";
+       body.appendChild(D);
+         // D.innerText=i;
+     console.log(i)
 }
