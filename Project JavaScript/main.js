@@ -9,11 +9,11 @@ body.style.backgroundRepeat= "no-repeat";
 
 let splash = document.querySelector('#splash')
 		splash.addEventListener('click', () =>{
-			document.body.style.backgroundImage = "url('splashSword.jpg')";
+			document.body.style.backgroundImage = "url('splash.jpg')";
 		});
 let splashSword = document.querySelector('#splashSword')
 		splashSword.addEventListener('click', () =>{
-			document.body.style.backgroundImage = "url('splash.jpg')";
+			document.body.style.backgroundImage = "url('splashSword.jpg')";
 		});
 let splasGhost = document.querySelector('#splashGhost')
 		splashGhost.addEventListener('click', () =>{
