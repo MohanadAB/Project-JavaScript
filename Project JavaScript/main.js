@@ -8,35 +8,35 @@ body.style.backgroundPosition= "center";
 body.style.backgroundRepeat= "no-repeat";
 
 let splash = document.querySelector('#splash')
-		splash.addEventListener('click', () =>{
+		splash.addEventListener('click', ()=>{
 		     document.body.style.backgroundImage = "url('splash.jpg')";
 		});
 let splashSword = document.querySelector('#splashSword')
-		     splashSword.addEventListener('click', () =>{
+		     splashSword.addEventListener('click', ()=>{
 			document.body.style.backgroundImage = "url('splashSword.jpg')";
 		});
 let splasGhost = document.querySelector('#splashGhost')
-		    splashGhost.addEventListener('click', () =>{
+		    splashGhost.addEventListener('click', ()=>{
 			document.body.style.backgroundImage = "url('splashGhost.jpg')";
 		});
 let splasFreedom = document.querySelector('#splashFreedom')
-		     splashFreedom.addEventListener('click', () =>{
+		     splashFreedom.addEventListener('click', ()=>{
 			document.body.style.backgroundImage = "url('splashFreedom.jpg')";
 		});
 let splashSaber = document.querySelector('#splashSaber')
-		    splashSaber.addEventListener('click', () =>{
+		    splashSaber.addEventListener('click', ()=>{
 			document.body.style.backgroundImage = "url('splashSaber.jpg')";
 		});
 let splasRobote = document.querySelector('#splashRobote')
-		     splashRobote.addEventListener('click', () =>{
+		     splashRobote.addEventListener('click', ()=>{
 			document.body.style.backgroundImage = "url('splashRobote.jpg')";
 		});
 let splasDeath = document.querySelector('#splashDeath')
-		     splashDeath.addEventListener('click', () =>{
+		     splashDeath.addEventListener('click', ()=>{
 			document.body.style.backgroundImage = "url('splashDeath.jpg')";
 		});
 let splasNier = document.querySelector('#splashNier')
-		    splashNier.addEventListener('click', () =>{
+		    splashNier.addEventListener('click', ()=>{
 			document.body.style.backgroundImage = "url('splashNier.jpg')";
 		});
 
@@ -69,7 +69,7 @@ body.style.gridTemplateRows=rows;
 
 for (var i = 0; i < pixW*pixH; i++) {
     let D = document.createElement("div"); 
-    D.addEventListener("mouseenter",()=>{
+    /*D.addEventListener("mouseenter",()=>{
         console.log("aa")
       	  D.style.backgroundColor="#"+((1<<24)*Math.random()|0).toString(16);
     });
@@ -77,8 +77,30 @@ for (var i = 0; i < pixW*pixH; i++) {
         console.log("aa")
       	  D.style.backgroundColor="";
     });
+	*/
+	D.addEventListener("mouseenter", generateRandomColor);
+	D.addEventListener("mouseleave", deleteColor);
+	
+function generateRandomColor(e) {
+   const lettersList = "123456789ABCDEF0"; 
+   const arrayLetterList = lettersList.split("");
+let color = "#"; 
+for (let i = 0; i < 6; i++) {
+	color += arrayLetterList[Math.floor(Math.random() * 15)];
+}
+this.style.background = color; 
+}
+
+	//delete color after some "time"
+function deleteColor(e) {
+setTimeout(function () {    //set time for clear color
+e.target.style.background = "";
+}, 300);
+}
     D.style.transition = "all 0.1s linear 0s";
        body.appendChild(D);
          // D.innerText=i;
-     console.log(i)
+    console.log(i)
 }
+document.getElementById("refresh").reset();
+
